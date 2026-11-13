@@ -1,0 +1,9 @@
+{
+  "info": {"name": "Dispatch Load Balancer", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable": [{"key":"baseUrl","value":"http://localhost:8080"}],
+  "item": [
+    {"name":"Submit orders", "request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"url":"{{baseUrl}}/api/dispatch/orders","body":{"mode":"raw","raw":"{\n  \"orders\": [\n    {\"orderId\":\"ORD001\",\"latitude\":28.6139,\"longitude\":77.2090,\"address\":\"Connaught Place, Delhi, India\",\"packageWeight\":15,\"priority\":\"HIGH\"},\n    {\"orderId\":\"ORD002\",\"latitude\":28.7041,\"longitude\":77.1025,\"address\":\"Karol Bagh, Delhi, India\",\"packageWeight\":10,\"priority\":\"MEDIUM\"}\n  ]\n}","options":{"raw":{"language":"json"}}}}},
+    {"name":"Submit vehicles", "request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"url":"{{baseUrl}}/api/dispatch/vehicles","body":{"mode":"raw","raw":"{\n  \"vehicles\": [\n    {\"vehicleId\":\"VEH001\",\"capacity\":100,\"currentLatitude\":28.7041,\"currentLongitude\":77.1025,\"currentAddress\":\"Karol Bagh, Delhi, India\"},\n    {\"vehicleId\":\"VEH002\",\"capacity\":80,\"currentLatitude\":28.5355,\"currentLongitude\":77.3910,\"currentAddress\":\"Sector 18, Noida, India\"}\n  ]\n}","options":{"raw":{"language":"json"}}}}},
+    {"name":"Get dispatch plan", "request":{"method":"GET","url":"{{baseUrl}}/api/dispatch/plan"}}
+  ]
+}
